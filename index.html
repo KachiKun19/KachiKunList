@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quản Lý Sinh Viên</h1>
+        <!-- Form Thêm/Sửa Sinh Viên -->
+        <div class="form-section">
+            <h2>Thêm/Sửa Sinh Viên</h2>
+            <form id="studentForm">
+                <div class="form-group">
+                    <label for="studentId">Mã Sinh Viên:</label>
+                    <input type="text" id="studentId" placeholder="Nhập mã sinh viên" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentName">Tên Sinh Viên:</label>
+                    <input type="text" id="studentName" placeholder="Nhập tên sinh viên" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentAge">Tuổi:</label>
+                    <input type="number" id="studentAge" placeholder="Nhập tuổi sinh viên" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Lớp:</label>
+                    <input type="text" id="studentClass" placeholder="Nhập lớp sinh viên" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentMajor">Ngành Học:</label>
+                    <input type="text" id="studentMajor" placeholder="Nhập ngành học sinh viên" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentGpa">Điểm Trung Bình:</label>
+                    <input type="number" step="0.01" id="studentGpa" placeholder="Nhập điểm trung bình" required>
+                </div>
+                <button type="submit" id="addBtn">Thêm Sinh Viên</button>
+            </form>
+        </div>
+
+        <!-- Danh sách sinh viên -->
+        <div class="list-section">
+            <h2>Danh Sách Sinh Viên</h2>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm sinh viên...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã Sinh Viên</th>
+                        <th>Tên Sinh Viên</th>
+                        <th>Tuổi</th>
+                        <th>Lớp</th>
+                        <th>Ngành Học</th>
+                        <th>Điểm Trung Bình</th>
+                        <th>Chức Năng</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Dữ liệu sinh viên sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script src="script.js"></script>
+</html>
