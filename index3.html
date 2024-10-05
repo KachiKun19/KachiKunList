@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Dashboard</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: rgba(255, 255, 255, 0.616); border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; }
+        h2, h1 { text-align: center; }
+        input[type=text], input[type=password] {
+            width: 100%; padding: 12px 20px; margin: 8px 0; border: 1px solid #ccc; box-sizing: border-box; border-radius: 4px;
+        }
+        button {
+            background-color: #04AA6D; color: white; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 4px; cursor: pointer; width: 100%;
+        }
+        button:hover { opacity: 0.8; }
+        .forgot-password { text-align: center; margin-top: 15px; }
+        .forgot-password a { color: #007bff; text-decoration: none; }
+        .forgot-password a:hover { text-decoration: underline; }
+        .exercise { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background: #f9f9f9; }
+        .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+   </style>
+</head>
+<body>
+
+<div class="container" id="loginContainer">
+    <h2>Login form</h2>
+    <form onsubmit="return login(event)">
+        <div class="imgcontainer">
+            <img src="https://png.pngtree.com/png-clipart/20191120/original/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_5056093.jpg" class="avatar" style="width: 40%; border-radius: 50%;">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" id="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter password" id="password" required>
+                
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="goBack()">Back</button>
+            <span class="forgot-password">Forgot <a href="#" onclick="forgotPassword()">password?</a></span>
+        </div>
+    </form>
+</div>
+
+<div class="container" id="dashboardContainer" style="display: none;">
+    <h1>Available Exercises</h1>
+    <button onclick="goBack()">Back to Login</button>
+
+    <div>
+        <h2>C Programming</h2>
+        <div class="exercise">
+            <h3>Exercise 1: Basic Syntax</h3>
+            <p>Learn the basic syntax of C programming.</p>
+            <p>Difficulty: Easy | Time: 30 mins | Points: 10</p>
+        </div>
+        <div class="exercise">
+            <h3>Exercise 2: Data Types</h3>
+            <p>Understand different data types in C.</p>
+            <p>Difficulty: Medium | Time: 45 mins | Points: 15</p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Python Programming</h2>
+        <div class="exercise">
+            <h3>Exercise 1: Hello World</h3>
+            <p>Write your first Python program.</p>
+            <p>Difficulty: Easy | Time: 20 mins | Points: 5</p>
+        </div>
+        <div class="exercise">
+            <h3>Exercise 2: Loops</h3>
+            <p>Learn about loops in Python.</p>
+            <p>Difficulty: Medium | Time: 30 mins | Points: 10</p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Java Programming</h2>
+        <div class="exercise">
+            <h3>Exercise 1: Java Basics</h3>
+            <p>Introduction to Java programming basics.</p>
+            <p>Difficulty: Easy | Time: 30 mins | Points: 10</p>
+        </div>
+        <div class="exercise">
+            <h3>Exercise 2: Object-Oriented Concepts</h3>
+            <p>Understand the principles of OOP in Java.</p>
+            <p>Difficulty: Hard | Time: 60 mins | Points: 20</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function login(event) {
+        event.preventDefault(); // Ngăn chặn hành động gửi form
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Simulate authentication (replace with real authentication logic)
+        if (username && password) {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('dashboardContainer').style.display = 'block';
+        } else {
+            alert("Please enter valid credentials.");
+        }
+    }
+
+    function forgotPassword() {
+        alert("Forgot password feature is not implemented yet.");
+    }
+
+    function goBack() {
+        const loginContainer = document.getElementById('loginContainer');
+        const dashboardContainer = document.getElementById('dashboardContainer');
+
+        if (dashboardContainer.style.display === 'block') {
+            dashboardContainer.style.display = 'none';
+            loginContainer.style.display = 'block';
+        } else {
+            loginContainer.style.display = 'none';
+            dashboardContainer.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
